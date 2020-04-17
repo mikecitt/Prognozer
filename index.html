@@ -4,19 +4,22 @@
     <meta charset="utf-8">
     <script src="js/jquery-3.5.0.min.js"></script>
     <script src="js/script.js"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" href="/css/master.css">
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.bundle.min.js" charset="utf-8"></script>
     <title>Prognozer</title>
   </head>
   <body>
-    <form>
-      <input type="text" id="naziv" name="naziv" value="Novi Sad">
-      <button type="button" onclick="posalji()" name="button">Posalji</button>
+    <form class="form-inline">
+      <input class="form-control" type="text" id="naziv" name="naziv" value="Novi Sad">
+      <button type="button" class="btn btn-primary" onclick="posalji()" name="button">Posalji</button>
     </form>
-
-    <table>
-      <thead>
+    <table class="table">
+      <thead class="thead-dark">
         <tr>
           <th>Vreme merenja</th>
-          <th>Temperatura</th>
+          <th>Temp</th>
           <th>Max</th>
           <th>Min</th>
           <th>Pritisak</th>
@@ -28,6 +31,16 @@
 
       </tbody>
     </table>
+    <!-- Footer -->
+    <footer>
 
+      <!-- Copyright -->
+      <div class="footer-copyright text-center py-3">© 2020 Copyright:
+        <a href="#"> Mikec</a>
+      </div>
+      <!-- Copyright -->
+
+    </footer>
+    <!-- Footer -->
   </body>
 </html>

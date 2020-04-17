@@ -1,9 +1,3 @@
-$(document).ready(function() {
-  $.getJSON("data/city.list.json") {
-
-  }
-});
-
 function posalji() {
   var naziv = $("#naziv").val();
   $("#data").empty();
