@@ -3,7 +3,7 @@ function posalji() {
   $("#data").empty();
   console.log(naziv);
   $.ajax({
-    url: "http://api.openweathermap.org/data/2.5/forecast?q=" + naziv + "&APPID=39314e0ae6d3990ee9fa61eca7f546a9",
+    url: "https://api.openweathermap.org/data/2.5/forecast?q=" + naziv + "&APPID=39314e0ae6d3990ee9fa61eca7f546a9",
     type: "GET",
     dataType: "json",
     complete: function(data) {
