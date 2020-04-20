@@ -1,4 +1,5 @@
 function posalji() {
+
   var naziv = $("#naziv").val();
   $("#data").empty();
   console.log(naziv);
@@ -9,7 +10,12 @@ function posalji() {
     complete: function(data) {
       console.log(data.responseJSON);
       $("#div").append("")
+      dataPoints = [];
       $.each(data.responseJSON.list, function(index, value) {
+        dataPoints.push({
+          x: new Date(value.dt_txt),
+          y: parseInt((value.main.temp-273.15).toFixed(2))
+        });
         var row =
         `
         <tr>
@@ -24,6 +30,27 @@ function posalji() {
         `;
         $("#data").append(row)
       });
+      console.log(dataPoints);
+      var options =  {
+      	animationEnabled: true,
+      	theme: "light2",
+      	title: {
+      		text: "Grafik"
+      	},
+      	axisX: {
+      		valueFormatString: "DD MMM YYYY",
+      	},
+      	axisY: {
+      		title: "Temperatura",
+      		titleFontSize: 24,
+      		includeZero: false
+      	},
+      	data: [{
+      		type: "spline",
+      		dataPoints: dataPoints
+      	}]
+      };
+      $("#chartContainer").CanvasJSChart(options);
     }
   });
 }
